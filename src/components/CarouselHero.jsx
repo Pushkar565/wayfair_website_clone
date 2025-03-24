@@ -1,20 +1,21 @@
+// src/components/HeroCarousel.jsx
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const carouselImages = [
-  "/assets/shop-this-spa.mp4",
-  "https://via.placeholder.com/1920x600?text=Banner+2",
-  "https://via.placeholder.com/1920x600?text=Banner+3",
+const carouselItems = [
+  { type: "video", src: "src/assets/home_img/80_-banner.mp4" },
+  { type: "video", src: "src/assets/home_img/shop this spa.mp4" },
+  { type: "video", src: "src/assets/home_img/banner-img-2.mp4" },
 ];
 
-const CarouselHero = () => {
+const HeroCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    speed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -22,23 +23,28 @@ const CarouselHero = () => {
   return (
     <div className="relative">
       <Slider {...settings}>
-        {carouselImages.map((img, index) => (
-          <div key={index}>
-            <img 
-              src={img} 
-              alt={`Banner ${index + 1}`} 
-              className="w-full h-[600px] object-cover" 
-            />
+        {carouselItems.map((item, index) => (
+          <div key={index} className="w-full h-[600px]">
+            {item.type === "video" ? (
+              <video
+                src={item.src}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+              />
+            ) : (
+              <img
+                src={item.src}
+                alt={`Banner ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
         ))}
       </Slider>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-white text-4xl font-bold bg-black bg-opacity-50 p-4 rounded">
-          Discover Home Inspiration
-        </h1>
-      </div>
     </div>
   );
 };
 
-export default CarouselHero;
+export default HeroCarousel;
