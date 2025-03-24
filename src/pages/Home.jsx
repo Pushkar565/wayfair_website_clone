@@ -1,9 +1,13 @@
+// src/pages/Home.jsx
+import React from "react";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero"; // Now only hero content
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
+import Top from "../components/Top";
+import DropdownMenu from "../components/DropdownMenu";
 
-// Dummy product data – later replaced with real API data
+// Dummy product data...
 const products = [
   {
     id: 1,
@@ -34,8 +38,10 @@ const products = [
 const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <Top />
       <Navbar />
-      <Hero />
+      <DropdownMenu />
+      <Hero /> {/* Now only renders HeroCarousel */}
       <main className="container mx-auto px-4 py-8 flex-1">
         <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
