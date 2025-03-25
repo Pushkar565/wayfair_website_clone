@@ -1,19 +1,16 @@
-// src/pages/Home.jsx
-import React from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero"; // Now only hero content
-import ProductCard from "../components/ProductCard";
-import Footer from "../components/Footer";
+import React, { useState } from "react";
 import Top from "../components/Top";
+import Navbar from "../components/Navbar";
 import DropdownMenu from "../components/DropdownMenu";
+import Footer from "../components/Footer";
+import ProductCardCatalog from "../components/ProductCardCatalog";
 
 import squareimg1 from "../assets/home_img/square_img_1.webp";
 import squareimg2 from "../assets/home_img/square_img_2.webp";
 import squareimg3 from "../assets/home_img/square_img_3.webp";
 import squareimg4 from "../assets/home_img/square_img_4.webp";
 
-// Dummy product data...
-const products = [
+const productData = [
   {
     id: 1,
     name: "Modern Sofa",
@@ -38,20 +35,27 @@ const products = [
     price: 129,
     image: { item: "image", src: squareimg4 },
   },
+  // Add more products as needed
 ];
 
-const Home = () => {
+const ProductCatalog = () => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+    alert(`${product.name} added to cart!`);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Top />
       <Navbar />
       <DropdownMenu />
-      <Hero /> {/* Now only renders HeroCarousel */}
       <main className="container mx-auto px-4 py-8 flex-1">
-        <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
+        <h1 className="text-3xl font-bold mb-6 text-center">Product Catalog</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {productData.map((product) => (
+            <ProductCardCatalog key={product.id} product={product} onAddToCart={addToCart} />
           ))}
         </div>
       </main>
@@ -60,4 +64,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ProductCatalog;
