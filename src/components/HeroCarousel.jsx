@@ -1,4 +1,3 @@
-// src/components/HeroCarousel.jsx
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,9 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const carouselItems = [
-  { type: "video", src: "src/assets/home_img/80_-banner.mp4" },
-  { type: "video", src: "src/assets/home_img/shop this spa.mp4" },
-  { type: "video", src: "src/assets/home_img/banner-img-2.mp4" },
+  { type: "video", src: "/src/assets/home_img/80_-banner.mp4" },
+  { type: "video", src: "/src/assets/home_img/shop this spa.mp4" },
+  { type: "video", src: "/src/assets/home_img/banner-img-2.mp4" },
 ];
 
 const HeroCarousel = () => {
@@ -21,7 +20,7 @@ const HeroCarousel = () => {
     speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false, // Disable default arrows
+    arrows: false, // disable default arrows
   };
 
   return (

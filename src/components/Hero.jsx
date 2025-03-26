@@ -1,6 +1,5 @@
-// src/components/Hero.jsx
 import React from "react";
-import HeroCarousel from "./HeroCarousel"; // assuming HeroCarousel handles only the hero content
+import HeroCarousel from "./HeroCarousel"; // assumes HeroCarousel handles the hero content
 
 const Hero = () => {
   return (

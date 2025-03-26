@@ -20,8 +20,12 @@ const Navbar = () => {
 
         {/* Account & Cart */}
         <div className="flex items-center space-x-4">
-          <Link to="/account" className="text-gray-700 hover:text-blue-600">Account</Link>
-          <Link to="/cart" className="text-gray-700 hover:text-blue-600">Cart</Link>
+          <Link to="/account" className="text-gray-700 hover:text-blue-600">
+            Account
+          </Link>
+          <Link to="/cart" className="text-gray-700 hover:text-blue-600">
+            Cart
+          </Link>
         </div>
       </div>
     </nav>

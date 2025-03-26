@@ -1,7 +1,6 @@
-// src/pages/Home.jsx
 import React from "react";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero"; // Now only hero content
+import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
 import Top from "../components/Top";
@@ -18,25 +17,25 @@ const products = [
     id: 1,
     name: "Modern Sofa",
     price: 899,
-    image: { item: "image", src: squareimg1 },
+    image: { src: squareimg1 },
   },
   {
     id: 2,
     name: "Elegant Dining Table",
     price: 499,
-    image: { item: "image", src: squareimg2 },
+    image: { src: squareimg2 },
   },
   {
     id: 3,
     name: "Cozy Armchair",
     price: 299,
-    image: { item: "image", src: squareimg3 },
+    image: { src: squareimg3 },
   },
   {
     id: 4,
     name: "Stylish Lamp",
     price: 129,
-    image: { item: "image", src: squareimg4 },
+    image: { src: squareimg4 },
   },
 ];
 
@@ -46,7 +45,7 @@ const Home = () => {
       <Top />
       <Navbar />
       <DropdownMenu />
-      <Hero /> {/* Now only renders HeroCarousel */}
+      <Hero />
       <main className="container mx-auto px-4 py-8 flex-1">
         <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

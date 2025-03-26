@@ -1,3 +1,4 @@
+// /src/components/ProductCardCatalog.jsx
 import { Link } from "react-router-dom";
 
 const ProductCardCatalog = ({ product, onAddToCart }) => {

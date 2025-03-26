@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Top from "./Top";
-import Navbar from "./Navbar";
-import DropdownMenu from "./DropdownMenu";
-import Footer from "./Footer";
+import Top from "../components/Top";
+import Navbar from "../components/Navbar";
+import DropdownMenu from "../components/DropdownMenu";
+import Footer from "../components/Footer";
 
 import squareimg1 from "../assets/home_img/square_img_1.webp";
 import squareimg2 from "../assets/home_img/square_img_2.webp";
